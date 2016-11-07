@@ -11,4 +11,18 @@ import Foundation
 class DataController: NSObject {
     static let sharedInstance = DataController()
     var searchResults = [SearchSuggestion]()
+    
+    func parseSearchSuggestionJson(json:AnyObject?) -> [SearchSuggestion]? {
+        if let resultDict  = json as? NSDictionary {
+            if let resultArray = resultDict["results"] as? [NSDictionary] {
+                var extractedSearchResults = [SearchSuggestion]()
+                for dict in resultArray {
+                    let searchResult = SearchSuggestion(dictionary: dict)
+                    extractedSearchResults.append(searchResult)
+                }
+                return extractedSearchResults
+            }
+        }
+        return nil
+    }
 }

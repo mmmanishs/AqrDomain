@@ -10,7 +10,6 @@
 		7C9BA8021DCFD4B300D1738B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BA8011DCFD4B300D1738B /* DataController.swift */; };
 		7C9BA8041DCFDED400D1738B /* CustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BA8031DCFDED400D1738B /* CustomSearchController.swift */; };
 		7C9BA8061DCFDEDD00D1738B /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BA8051DCFDEDD00D1738B /* CustomSearchBar.swift */; };
-		7C9BA8081DCFDFE600D1738B /* countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7C9BA8071DCFDFE600D1738B /* countries.txt */; };
 		7CA773E91DCFAC2900402357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA773E81DCFAC2900402357 /* AppDelegate.swift */; };
 		7CA773EB1DCFAC2900402357 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA773EA1DCFAC2900402357 /* SearchViewController.swift */; };
 		7CA773EE1DCFAC2900402357 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA773EC1DCFAC2900402357 /* Main.storyboard */; };
@@ -19,13 +18,14 @@
 		7CC599431DCFAC8700BEAB6B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC599421DCFAC8700BEAB6B /* APIManager.swift */; };
 		7CC599481DCFAE5700BEAB6B /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 7CC599471DCFAE5700BEAB6B /* Cartfile */; };
 		7CC5D71B1DCFC8B30070C882 /* SearchSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5D71A1DCFC8B30070C882 /* SearchSuggestion.swift */; };
+		7CF3F5F61DD101B9001BE320 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3F5F51DD101B9001BE320 /* LocalDataManager.swift */; };
+		7CF3F5F81DD10289001BE320 /* LocalData in Resources */ = {isa = PBXBuildFile; fileRef = 7CF3F5F71DD10289001BE320 /* LocalData */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7C9BA8011DCFD4B300D1738B /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		7C9BA8031DCFDED400D1738B /* CustomSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchController.swift; sourceTree = "<group>"; };
 		7C9BA8051DCFDEDD00D1738B /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
-		7C9BA8071DCFDFE600D1738B /* countries.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = countries.txt; sourceTree = "<group>"; };
 		7CA773E51DCFAC2900402357 /* AqrDomain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AqrDomain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA773E81DCFAC2900402357 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CA773EA1DCFAC2900402357 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +36,8 @@
 		7CC599421DCFAC8700BEAB6B /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		7CC599471DCFAE5700BEAB6B /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		7CC5D71A1DCFC8B30070C882 /* SearchSuggestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSuggestion.swift; sourceTree = "<group>"; };
+		7CF3F5F51DD101B9001BE320 /* LocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
+		7CF3F5F71DD10289001BE320 /* LocalData */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocalData; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,10 +51,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C2D33371DD10CF800D0D681 /* DataControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7CC599421DCFAC8700BEAB6B /* APIManager.swift */,
+				7CF3F5F51DD101B9001BE320 /* LocalDataManager.swift */,
+				7C9BA8011DCFD4B300D1738B /* DataController.swift */,
+				7CC5D71A1DCFC8B30070C882 /* SearchSuggestion.swift */,
+			);
+			name = DataControllers;
+			sourceTree = "<group>";
+		};
 		7CA773DC1DCFAC2900402357 = {
 			isa = PBXGroup;
 			children = (
-				7C9BA8071DCFDFE600D1738B /* countries.txt */,
 				7CA773E71DCFAC2900402357 /* AqrDomain */,
 				7CA773E61DCFAC2900402357 /* Products */,
 			);
@@ -78,9 +90,8 @@
 				7CA773F11DCFAC2900402357 /* LaunchScreen.storyboard */,
 				7CA773F41DCFAC2900402357 /* Info.plist */,
 				7CC599471DCFAE5700BEAB6B /* Cartfile */,
-				7CC599421DCFAC8700BEAB6B /* APIManager.swift */,
-				7C9BA8011DCFD4B300D1738B /* DataController.swift */,
-				7CC5D71A1DCFC8B30070C882 /* SearchSuggestion.swift */,
+				7C2D33371DD10CF800D0D681 /* DataControllers */,
+				7CF3F5F71DD10289001BE320 /* LocalData */,
 			);
 			path = AqrDomain;
 			sourceTree = "<group>";
@@ -147,7 +158,7 @@
 				7CA773F31DCFAC2900402357 /* LaunchScreen.storyboard in Resources */,
 				7CA773F01DCFAC2900402357 /* Assets.xcassets in Resources */,
 				7CC599481DCFAE5700BEAB6B /* Cartfile in Resources */,
-				7C9BA8081DCFDFE600D1738B /* countries.txt in Resources */,
+				7CF3F5F81DD10289001BE320 /* LocalData in Resources */,
 				7CA773EE1DCFAC2900402357 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C9BA8061DCFDEDD00D1738B /* CustomSearchBar.swift in Sources */,
+				7CF3F5F61DD101B9001BE320 /* LocalDataManager.swift in Sources */,
 				7C9BA8041DCFDED400D1738B /* CustomSearchController.swift in Sources */,
 				7C9BA8021DCFD4B300D1738B /* DataController.swift in Sources */,
 				7CC599431DCFAC8700BEAB6B /* APIManager.swift in Sources */,

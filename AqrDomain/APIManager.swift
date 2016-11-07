@@ -10,15 +10,19 @@ import Foundation
 class APIManager: NSObject {
     static let sharedInstance = APIManager()
     
+    let shouldLoadFromLocal = true
+    
     let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
     var currentTask:NSURLSessionTask?
     
     func searchDomainName(query query:String,completion: ((success:Bool, dataReceived :[SearchSuggestion]?)->Void))  {
-        
+        if shouldLoadFromLocal == true {
+            completion(success:true, dataReceived: DataController.sharedInstance.parseSearchSuggestionJson(LocalDataManager.sharedInstance.getSearchDataFromLocal()))
+            return
+        }
         if currentTask != nil {
             currentTask?.cancel()
         }
-//        NSDictionary *headers = @{@"X-Mashape-Key": @"czbdyylahJmsh86PI5jfI8VS7yjUp1eP9B8jsn4eRqCz33C2Nj"};
         let urlString = "https://domainr.p.mashape.com/v2/search?mashape-key=&defaults=club%2Ccoffee&location=de&query="+query+"&registrar=namecheap.com"
         let encodedUrlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet())
         guard let url = NSURL(string: encodedUrlString!) else{
@@ -35,21 +39,10 @@ class APIManager: NSObject {
             guard let data = data else{
                 return
             }
-            let string = String(data: data, encoding: NSUTF8StringEncoding)
-
+            LocalDataManager.sharedInstance.saveDataToLocal(data)
             do {
                 let json = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves)
-
-                if let resultDict  = json as? NSDictionary {
-                    if let resultArray = resultDict["results"] as? [NSDictionary] {
-                        for dict in resultArray {
-                            let searchResult = SearchSuggestion(dictionary: dict)
-                            DataController.sharedInstance.searchResults.append(searchResult)
-                        }
-                        completion(success:true, dataReceived: DataController.sharedInstance.searchResults)
-                    }
-                }
-                
+                completion(success:true, dataReceived: DataController.sharedInstance.parseSearchSuggestionJson(json))
             }
             catch {
                 print("Unable to convert data to json")
@@ -58,4 +51,6 @@ class APIManager: NSObject {
         task.resume()
         currentTask = task
     }
+    
+
 }
