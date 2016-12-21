@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0D0D0F1E0B0C2200B0535C /* TSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0D0C1E0B0C2200B0535C /* TSNotification.swift */; };
+		7C0D0D101E0B0C2200B0535C /* TSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0D0D1E0B0C2200B0535C /* TSNotificationCenter.swift */; };
+		7C0D0D111E0B0C2200B0535C /* TSNotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0D0E1E0B0C2200B0535C /* TSNotificationObserver.swift */; };
+		7C2D333D1DD10F8300D0D681 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 7C2D333C1DD10F8300D0D681 /* Cartfile */; };
+		7C55097E1DD18E980074136B /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C55097D1DD18E980074136B /* DZNEmptyDataSet.framework */; };
+		7C5509821DD193830074136B /* RegisterDomainWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5509801DD193830074136B /* RegisterDomainWebViewController.swift */; };
+		7C5509831DD193830074136B /* RegisterDomainWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C5509811DD193830074136B /* RegisterDomainWebViewController.xib */; };
 		7C9BA8021DCFD4B300D1738B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BA8011DCFD4B300D1738B /* DataController.swift */; };
 		7C9BA8041DCFDED400D1738B /* CustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BA8031DCFDED400D1738B /* CustomSearchController.swift */; };
 		7C9BA8061DCFDEDD00D1738B /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BA8051DCFDEDD00D1738B /* CustomSearchBar.swift */; };
@@ -16,13 +23,19 @@
 		7CA773F01DCFAC2900402357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA773EF1DCFAC2900402357 /* Assets.xcassets */; };
 		7CA773F31DCFAC2900402357 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA773F11DCFAC2900402357 /* LaunchScreen.storyboard */; };
 		7CC599431DCFAC8700BEAB6B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC599421DCFAC8700BEAB6B /* APIManager.swift */; };
-		7CC599481DCFAE5700BEAB6B /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 7CC599471DCFAE5700BEAB6B /* Cartfile */; };
 		7CC5D71B1DCFC8B30070C882 /* SearchSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5D71A1DCFC8B30070C882 /* SearchSuggestion.swift */; };
 		7CF3F5F61DD101B9001BE320 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3F5F51DD101B9001BE320 /* LocalDataManager.swift */; };
 		7CF3F5F81DD10289001BE320 /* LocalData in Resources */ = {isa = PBXBuildFile; fileRef = 7CF3F5F71DD10289001BE320 /* LocalData */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C0D0D0C1E0B0C2200B0535C /* TSNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNotification.swift; sourceTree = "<group>"; };
+		7C0D0D0D1E0B0C2200B0535C /* TSNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNotificationCenter.swift; sourceTree = "<group>"; };
+		7C0D0D0E1E0B0C2200B0535C /* TSNotificationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNotificationObserver.swift; sourceTree = "<group>"; };
+		7C2D333C1DD10F8300D0D681 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		7C55097D1DD18E980074136B /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
+		7C5509801DD193830074136B /* RegisterDomainWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDomainWebViewController.swift; sourceTree = "<group>"; };
+		7C5509811DD193830074136B /* RegisterDomainWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterDomainWebViewController.xib; sourceTree = "<group>"; };
 		7C9BA8011DCFD4B300D1738B /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		7C9BA8031DCFDED400D1738B /* CustomSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchController.swift; sourceTree = "<group>"; };
 		7C9BA8051DCFDEDD00D1738B /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
@@ -34,7 +47,6 @@
 		7CA773F21DCFAC2900402357 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CA773F41DCFAC2900402357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CC599421DCFAC8700BEAB6B /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		7CC599471DCFAE5700BEAB6B /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		7CC5D71A1DCFC8B30070C882 /* SearchSuggestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSuggestion.swift; sourceTree = "<group>"; };
 		7CF3F5F51DD101B9001BE320 /* LocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
 		7CF3F5F71DD10289001BE320 /* LocalData */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocalData; sourceTree = "<group>"; };
@@ -45,12 +57,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C55097E1DD18E980074136B /* DZNEmptyDataSet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C0D0D0B1E0B0C2200B0535C /* TSNotiifcation */ = {
+			isa = PBXGroup;
+			children = (
+				7C0D0D0C1E0B0C2200B0535C /* TSNotification.swift */,
+				7C0D0D0D1E0B0C2200B0535C /* TSNotificationCenter.swift */,
+				7C0D0D0E1E0B0C2200B0535C /* TSNotificationObserver.swift */,
+			);
+			path = TSNotiifcation;
+			sourceTree = "<group>";
+		};
 		7C2D33371DD10CF800D0D681 /* DataControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,9 +85,21 @@
 			name = DataControllers;
 			sourceTree = "<group>";
 		};
+		7C55097F1DD193330074136B /* CustomSearchUI */ = {
+			isa = PBXGroup;
+			children = (
+				7C9BA8031DCFDED400D1738B /* CustomSearchController.swift */,
+				7C9BA8051DCFDEDD00D1738B /* CustomSearchBar.swift */,
+			);
+			name = CustomSearchUI;
+			sourceTree = "<group>";
+		};
 		7CA773DC1DCFAC2900402357 = {
 			isa = PBXGroup;
 			children = (
+				7C0D0D0B1E0B0C2200B0535C /* TSNotiifcation */,
+				7C55097D1DD18E980074136B /* DZNEmptyDataSet.framework */,
+				7C2D333C1DD10F8300D0D681 /* Cartfile */,
 				7CA773E71DCFAC2900402357 /* AqrDomain */,
 				7CA773E61DCFAC2900402357 /* Products */,
 			);
@@ -81,15 +116,15 @@
 		7CA773E71DCFAC2900402357 /* AqrDomain */ = {
 			isa = PBXGroup;
 			children = (
+				7C55097F1DD193330074136B /* CustomSearchUI */,
 				7CA773E81DCFAC2900402357 /* AppDelegate.swift */,
 				7CA773EA1DCFAC2900402357 /* SearchViewController.swift */,
-				7C9BA8031DCFDED400D1738B /* CustomSearchController.swift */,
-				7C9BA8051DCFDEDD00D1738B /* CustomSearchBar.swift */,
+				7C5509801DD193830074136B /* RegisterDomainWebViewController.swift */,
+				7C5509811DD193830074136B /* RegisterDomainWebViewController.xib */,
 				7CA773EC1DCFAC2900402357 /* Main.storyboard */,
 				7CA773EF1DCFAC2900402357 /* Assets.xcassets */,
 				7CA773F11DCFAC2900402357 /* LaunchScreen.storyboard */,
 				7CA773F41DCFAC2900402357 /* Info.plist */,
-				7CC599471DCFAE5700BEAB6B /* Cartfile */,
 				7C2D33371DD10CF800D0D681 /* DataControllers */,
 				7CF3F5F71DD10289001BE320 /* LocalData */,
 			);
@@ -106,6 +141,7 @@
 				7CA773E11DCFAC2900402357 /* Sources */,
 				7CA773E21DCFAC2900402357 /* Frameworks */,
 				7CA773E31DCFAC2900402357 /* Resources */,
+				7C55097C1DD18D330074136B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -129,6 +165,7 @@
 					7CA773E41DCFAC2900402357 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 79FS6EETVS;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -155,15 +192,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C5509831DD193830074136B /* RegisterDomainWebViewController.xib in Resources */,
+				7C2D333D1DD10F8300D0D681 /* Cartfile in Resources */,
 				7CA773F31DCFAC2900402357 /* LaunchScreen.storyboard in Resources */,
 				7CA773F01DCFAC2900402357 /* Assets.xcassets in Resources */,
-				7CC599481DCFAE5700BEAB6B /* Cartfile in Resources */,
 				7CF3F5F81DD10289001BE320 /* LocalData in Resources */,
 				7CA773EE1DCFAC2900402357 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7C55097C1DD18D330074136B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/DZNEmptyDataSet.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7CA773E11DCFAC2900402357 /* Sources */ = {
@@ -172,9 +227,13 @@
 			files = (
 				7C9BA8061DCFDEDD00D1738B /* CustomSearchBar.swift in Sources */,
 				7CF3F5F61DD101B9001BE320 /* LocalDataManager.swift in Sources */,
+				7C5509821DD193830074136B /* RegisterDomainWebViewController.swift in Sources */,
 				7C9BA8041DCFDED400D1738B /* CustomSearchController.swift in Sources */,
 				7C9BA8021DCFD4B300D1738B /* DataController.swift in Sources */,
+				7C0D0D111E0B0C2200B0535C /* TSNotificationObserver.swift in Sources */,
+				7C0D0D0F1E0B0C2200B0535C /* TSNotification.swift in Sources */,
 				7CC599431DCFAC8700BEAB6B /* APIManager.swift in Sources */,
+				7C0D0D101E0B0C2200B0535C /* TSNotificationCenter.swift in Sources */,
 				7CA773EB1DCFAC2900402357 /* SearchViewController.swift in Sources */,
 				7CA773E91DCFAC2900402357 /* AppDelegate.swift in Sources */,
 				7CC5D71B1DCFC8B30070C882 /* SearchSuggestion.swift in Sources */,
@@ -292,11 +351,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AqrDomain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.manish.AqrDomain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -306,11 +370,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AqrDomain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.manish.AqrDomain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

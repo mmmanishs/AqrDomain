@@ -12,7 +12,7 @@ class DataController: NSObject {
     static let sharedInstance = DataController()
     var searchResults = [SearchSuggestion]()
     
-    func parseSearchSuggestionJson(json:AnyObject?) -> [SearchSuggestion]? {
+    func parseSearchSuggestionJson(_ json:AnyObject?) -> [SearchSuggestion]? {
         if let resultDict  = json as? NSDictionary {
             if let resultArray = resultDict["results"] as? [NSDictionary] {
                 var extractedSearchResults = [SearchSuggestion]()

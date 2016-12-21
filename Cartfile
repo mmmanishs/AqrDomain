@@ -1,1 +1,2 @@
-git "git@github.com:Mashape/unirest-obj-c.git"
+git "https://github.com/dzenbot/DZNEmptyDataSet.git"
+git "https://github.com/brynbellomy/FlatUIColors.git"

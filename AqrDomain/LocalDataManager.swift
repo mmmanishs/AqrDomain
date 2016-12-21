@@ -9,12 +9,12 @@
 import Foundation
 class LocalDataManager: NSObject {
     static let sharedInstance = LocalDataManager()
-    func saveDataToLocal(data:NSData?) {
+    func saveDataToLocal(_ data:Data?) {
         guard let data = data else {
             return
         }
         do {
-            try data.writeToFile(getLocalDataFilePath(), options: .AtomicWrite)
+            try data.write(to: URL(fileURLWithPath: getLocalDataFilePath()), options: .atomicWrite)
         }
         catch {
             print("Exception when writing to the file")
@@ -22,10 +22,10 @@ class LocalDataManager: NSObject {
         
     }
     func getSearchDataFromLocal() -> AnyObject? {
-        if let data = NSData(contentsOfFile: getLocalDataFilePath()) {
+        if let data = try? Data(contentsOf: URL(fileURLWithPath: getLocalDataFilePath())) {
             do {
-                let dictData = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves)
-                    return dictData
+                let dictData = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                    return dictData as AnyObject?
             }
             catch {
                 print("Cannot read search data")

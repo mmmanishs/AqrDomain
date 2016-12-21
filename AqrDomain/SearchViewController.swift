@@ -7,12 +7,11 @@
 //
 
 import UIKit
-
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate, CustomSearchControllerDelegate  {
     @IBOutlet weak var tblSearchResults: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
-    var timer = NSTimer()
+    var timer = Timer()
     var dataArray = [SearchSuggestion]()
     
     var filteredArray = [SearchSuggestion]()
@@ -30,16 +29,17 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.navigationController?.navigationBar.hidden = true
+        self.navigationController?.navigationBar.isHidden = true
         tblSearchResults.delegate = self
         tblSearchResults.dataSource = self
         
-        self.activityIndicator.hidden = true
+        self.activityIndicator.isHidden = true
         // Uncomment the following line to enable the default search controller.
         // configureSearchController()
         
         // Comment out the next line to disable the customized search controller and search bar and use the default ones. Also, uncomment the above line.
         configureCustomSearchController()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,12 +50,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // MARK: UITableView Delegate and Datasource functions
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if shouldShowSearchResults {
             return filteredArray.count
         }
@@ -66,8 +66,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("idCell", forIndexPath: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "idCell", for: indexPath)
         
         let searchResult = filteredArray[indexPath.row]
         
@@ -82,12 +82,15 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let searchResult = self.filteredArray[indexPath.row]
+        let registerDomain = RegisterDomainWebViewController()
+        registerDomain.urlStringToLoad = searchResult.registerURL
+        self.navigationController?.pushViewController(registerDomain, animated: true)
     }
     // MARK: Custom functions
     
@@ -107,7 +110,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func configureCustomSearchController() {
-        customSearchController = CustomSearchController(searchResultsController: self, searchBarFrame: CGRectMake(0.0, 0.0, tblSearchResults.frame.size.width, 50.0), searchBarFont: UIFont(name: "Futura", size: 16.0)!, searchBarTextColor: UIColor.orangeColor(), searchBarTintColor: UIColor.blackColor())
+        customSearchController = CustomSearchController(searchResultsController: self, searchBarFrame: CGRect(x: 0.0, y: 0.0, width: tblSearchResults.frame.size.width, height: 50.0), searchBarFont: UIFont(name: "Futura", size: 16.0)!, searchBarTextColor: UIColor.orange, searchBarTintColor: UIColor.black)
         
         customSearchController.customSearchBar.placeholder = "Search your domain name here..."
         tblSearchResults.tableHeaderView = customSearchController.customSearchBar
@@ -118,30 +121,30 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // MARK: UISearchBarDelegate functions
     
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
 //        shouldShowSearchResults = true
 //        tblSearchResults.reloadData()
     }
     
     
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         shouldShowSearchResults = false
         tblSearchResults.reloadData()
     }
     
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if !shouldShowSearchResults {
             shouldShowSearchResults = true
         }
-        self.fetchDataAndUpdateUI("")
+        self.fetchDataAndUpdateUI("" as AnyObject)
         searchController.searchBar.resignFirstResponder()
     }
     
     
     // MARK: UISearchResultsUpdating delegate function
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
 //        guard let searchString = searchController.searchBar.text else {
 //            return
 //        }
@@ -164,7 +167,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func didTapOnSearchButton() {
         if !shouldShowSearchResults {
             shouldShowSearchResults = true
-            self.fetchDataAndUpdateUI("")
+            self.fetchDataAndUpdateUI("" as AnyObject)
         }
     }
     
@@ -175,7 +178,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-    func didChangeSearchText(searchText: String) {
+    func didChangeSearchText(_ searchText: String) {
         // Filter the data array and get only those countries that match the search text.
         guard searchText != "" else {
             shouldShowSearchResults = false
@@ -183,22 +186,22 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return
         }
         shouldShowSearchResults = true
-        self.activityIndicator.hidden = false
-        if timer.valid {
+        self.activityIndicator.isHidden = false
+        if timer.isValid {
             timer.invalidate()
         }
         currentSearchText = searchText
         if self.isAPIRequestRequired(searchText) {
             print("APi Required")
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.6, target: self, selector: #selector(SearchViewController.fetchDataAndUpdateUI(_:)), userInfo: nil, repeats: false)
+            timer = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: #selector(SearchViewController.fetchDataAndUpdateUI(_:)), userInfo: nil, repeats: false)
 
          }
         else {
             print("API not required..")
             self.filteredArray = self.dataArray.filter({ (searchSuggestion) -> Bool in
-                let domain: NSString = searchSuggestion.domain!
+                let domain: NSString = searchSuggestion.domain! as NSString
                 
-                return (domain.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch).location) != NSNotFound
+                return (domain.range(of: searchText, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
             })
             // Reload the tableview.
             tblSearchResults.reloadData()
@@ -206,7 +209,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    @objc func fetchDataAndUpdateUI(sender:AnyObject)  {
+    @objc func fetchDataAndUpdateUI(_ sender:AnyObject)  {
         APIManager.sharedInstance.searchDomainName(query: currentSearchText,completion: {
             (success, dataReceived) in
             guard let dataReceived = dataReceived else {
@@ -214,21 +217,21 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             self.dataArray = dataReceived
             self.filteredArray = self.dataArray.filter({ (searchSuggestion) -> Bool in
-                let domain: NSString = searchSuggestion.domain!
+                let domain: NSString = searchSuggestion.domain! as NSString
                 
-                return (domain.rangeOfString(self.currentSearchText, options: NSStringCompareOptions.CaseInsensitiveSearch).location) != NSNotFound
+                return (domain.range(of: self.currentSearchText, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
             })
             // Reload the tableview.
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.tblSearchResults.reloadData()
-                self.activityIndicator.hidden = true
+                self.activityIndicator.isHidden = true
             }
             
             
         })
     }
-     func isAPIRequestRequired(searchText:String?) -> Bool {
+     func isAPIRequestRequired(_ searchText:String?) -> Bool {
         guard let searchText = searchText else {
             return false
         }
@@ -242,4 +245,3 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 }
-
