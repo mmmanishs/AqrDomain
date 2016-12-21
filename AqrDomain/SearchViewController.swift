@@ -87,9 +87,11 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let searchResult = self.filteredArray[indexPath.row]
+        TSNotificationCenter.defaultCenter.postTSNotificationWithName("registerParam", withObject: searchResult.registerURL as AnyObject?, notificationFireType: NotificationFireType.notificationFireAndRememberOnceIfNotIntercepted)
+
         let registerDomain = RegisterDomainWebViewController()
-        registerDomain.urlStringToLoad = searchResult.registerURL
         self.navigationController?.pushViewController(registerDomain, animated: true)
     }
     // MARK: Custom functions

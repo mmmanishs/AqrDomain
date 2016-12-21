@@ -9,6 +9,7 @@
 import Foundation
 class LocalDataManager: NSObject {
     static let sharedInstance = LocalDataManager()
+    
     func saveDataToLocal(_ data:Data?) {
         guard let data = data else {
             return

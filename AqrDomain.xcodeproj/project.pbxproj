@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0B51331E0B243300CD3DF9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B51321E0B243300CD3DF9 /* Settings.swift */; };
+		7C0B51351E0B277C00CD3DF9 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B51341E0B277C00CD3DF9 /* AppManager.swift */; };
 		7C0D0D0F1E0B0C2200B0535C /* TSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0D0C1E0B0C2200B0535C /* TSNotification.swift */; };
 		7C0D0D101E0B0C2200B0535C /* TSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0D0D1E0B0C2200B0535C /* TSNotificationCenter.swift */; };
 		7C0D0D111E0B0C2200B0535C /* TSNotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0D0E1E0B0C2200B0535C /* TSNotificationObserver.swift */; };
+		7C0D0D131E0B223200B0535C /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D0D121E0B223200B0535C /* Settings.plist */; };
 		7C2D333D1DD10F8300D0D681 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 7C2D333C1DD10F8300D0D681 /* Cartfile */; };
 		7C55097E1DD18E980074136B /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C55097D1DD18E980074136B /* DZNEmptyDataSet.framework */; };
 		7C5509821DD193830074136B /* RegisterDomainWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5509801DD193830074136B /* RegisterDomainWebViewController.swift */; };
@@ -29,9 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C0B51321E0B243300CD3DF9 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		7C0B51341E0B277C00CD3DF9 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		7C0D0D0C1E0B0C2200B0535C /* TSNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNotification.swift; sourceTree = "<group>"; };
 		7C0D0D0D1E0B0C2200B0535C /* TSNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNotificationCenter.swift; sourceTree = "<group>"; };
 		7C0D0D0E1E0B0C2200B0535C /* TSNotificationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNotificationObserver.swift; sourceTree = "<group>"; };
+		7C0D0D121E0B223200B0535C /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		7C2D333C1DD10F8300D0D681 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		7C55097D1DD18E980074136B /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
 		7C5509801DD193830074136B /* RegisterDomainWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDomainWebViewController.swift; sourceTree = "<group>"; };
@@ -79,8 +85,10 @@
 			children = (
 				7CC599421DCFAC8700BEAB6B /* APIManager.swift */,
 				7CF3F5F51DD101B9001BE320 /* LocalDataManager.swift */,
+				7C0B51321E0B243300CD3DF9 /* Settings.swift */,
 				7C9BA8011DCFD4B300D1738B /* DataController.swift */,
 				7CC5D71A1DCFC8B30070C882 /* SearchSuggestion.swift */,
+				7C0B51341E0B277C00CD3DF9 /* AppManager.swift */,
 			);
 			name = DataControllers;
 			sourceTree = "<group>";
@@ -92,11 +100,14 @@
 				7C9BA8051DCFDEDD00D1738B /* CustomSearchBar.swift */,
 			);
 			name = CustomSearchUI;
+			path = AqrDomain;
 			sourceTree = "<group>";
 		};
 		7CA773DC1DCFAC2900402357 = {
 			isa = PBXGroup;
 			children = (
+				7C0D0D121E0B223200B0535C /* Settings.plist */,
+				7C55097F1DD193330074136B /* CustomSearchUI */,
 				7C0D0D0B1E0B0C2200B0535C /* TSNotiifcation */,
 				7C55097D1DD18E980074136B /* DZNEmptyDataSet.framework */,
 				7C2D333C1DD10F8300D0D681 /* Cartfile */,
@@ -116,17 +127,16 @@
 		7CA773E71DCFAC2900402357 /* AqrDomain */ = {
 			isa = PBXGroup;
 			children = (
-				7C55097F1DD193330074136B /* CustomSearchUI */,
 				7CA773E81DCFAC2900402357 /* AppDelegate.swift */,
 				7CA773EA1DCFAC2900402357 /* SearchViewController.swift */,
 				7C5509801DD193830074136B /* RegisterDomainWebViewController.swift */,
 				7C5509811DD193830074136B /* RegisterDomainWebViewController.xib */,
 				7CA773EC1DCFAC2900402357 /* Main.storyboard */,
+				7C2D33371DD10CF800D0D681 /* DataControllers */,
+				7CF3F5F71DD10289001BE320 /* LocalData */,
 				7CA773EF1DCFAC2900402357 /* Assets.xcassets */,
 				7CA773F11DCFAC2900402357 /* LaunchScreen.storyboard */,
 				7CA773F41DCFAC2900402357 /* Info.plist */,
-				7C2D33371DD10CF800D0D681 /* DataControllers */,
-				7CF3F5F71DD10289001BE320 /* LocalData */,
 			);
 			path = AqrDomain;
 			sourceTree = "<group>";
@@ -196,6 +206,7 @@
 				7C2D333D1DD10F8300D0D681 /* Cartfile in Resources */,
 				7CA773F31DCFAC2900402357 /* LaunchScreen.storyboard in Resources */,
 				7CA773F01DCFAC2900402357 /* Assets.xcassets in Resources */,
+				7C0D0D131E0B223200B0535C /* Settings.plist in Resources */,
 				7CF3F5F81DD10289001BE320 /* LocalData in Resources */,
 				7CA773EE1DCFAC2900402357 /* Main.storyboard in Resources */,
 			);
@@ -227,10 +238,12 @@
 			files = (
 				7C9BA8061DCFDEDD00D1738B /* CustomSearchBar.swift in Sources */,
 				7CF3F5F61DD101B9001BE320 /* LocalDataManager.swift in Sources */,
+				7C0B51331E0B243300CD3DF9 /* Settings.swift in Sources */,
 				7C5509821DD193830074136B /* RegisterDomainWebViewController.swift in Sources */,
 				7C9BA8041DCFDED400D1738B /* CustomSearchController.swift in Sources */,
 				7C9BA8021DCFD4B300D1738B /* DataController.swift in Sources */,
 				7C0D0D111E0B0C2200B0535C /* TSNotificationObserver.swift in Sources */,
+				7C0B51351E0B277C00CD3DF9 /* AppManager.swift in Sources */,
 				7C0D0D0F1E0B0C2200B0535C /* TSNotification.swift in Sources */,
 				7CC599431DCFAC8700BEAB6B /* APIManager.swift in Sources */,
 				7C0D0D101E0B0C2200B0535C /* TSNotificationCenter.swift in Sources */,

@@ -9,14 +9,12 @@
 import Foundation
 class APIManager: NSObject {
     static let sharedInstance = APIManager()
-    
-    let shouldLoadFromLocal = false
-    
+        
     let session = URLSession(configuration: URLSessionConfiguration.default)
     var currentTask:URLSessionTask?
     
     func searchDomainName(query:String,completion: @escaping ((_ success:Bool, _ dataReceived :[SearchSuggestion]?)->Void))  {
-        if shouldLoadFromLocal == true {
+        if AppManager.sharedInstance.appSettings.useNetwork == true {
             completion(true, DataController.sharedInstance.parseSearchSuggestionJson(LocalDataManager.sharedInstance.getSearchDataFromLocal()))
             return
         }
