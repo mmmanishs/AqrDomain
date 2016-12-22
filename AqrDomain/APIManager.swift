@@ -14,7 +14,7 @@ class APIManager: NSObject {
     var currentTask:URLSessionTask?
     
     func searchDomainName(query:String,completion: @escaping ((_ success:Bool, _ dataReceived :[SearchSuggestion]?)->Void))  {
-        if AppManager.sharedInstance.appSettings.useNetwork == true {
+        if AppManager.sharedInstance.appSettings.useNetwork == false {
             completion(true, DataController.sharedInstance.parseSearchSuggestionJson(LocalDataManager.sharedInstance.getSearchDataFromLocal()))
             return
         }

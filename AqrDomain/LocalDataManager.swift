@@ -37,6 +37,6 @@ class LocalDataManager: NSObject {
     }
     
     func getLocalDataFilePath() -> String {
-        return "/Users/ldq847/MyFolders/Code Source/AqrDomain/AqrDomain/LocalData"
+        return AppManager.sharedInstance.appSettings.localDataPath
     }
 }

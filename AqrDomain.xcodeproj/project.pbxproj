@@ -103,6 +103,24 @@
 			path = AqrDomain;
 			sourceTree = "<group>";
 		};
+		7C9AACD31E0B2C4400D0F01C /* Storyboards & Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				7C5509811DD193830074136B /* RegisterDomainWebViewController.xib */,
+				7CA773EC1DCFAC2900402357 /* Main.storyboard */,
+			);
+			name = "Storyboards & Xibs";
+			sourceTree = "<group>";
+		};
+		7C9AACD51E0B2C7600D0F01C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7CA773EA1DCFAC2900402357 /* SearchViewController.swift */,
+				7C5509801DD193830074136B /* RegisterDomainWebViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		7CA773DC1DCFAC2900402357 = {
 			isa = PBXGroup;
 			children = (
@@ -128,10 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				7CA773E81DCFAC2900402357 /* AppDelegate.swift */,
-				7CA773EA1DCFAC2900402357 /* SearchViewController.swift */,
-				7C5509801DD193830074136B /* RegisterDomainWebViewController.swift */,
-				7C5509811DD193830074136B /* RegisterDomainWebViewController.xib */,
-				7CA773EC1DCFAC2900402357 /* Main.storyboard */,
+				7C9AACD51E0B2C7600D0F01C /* ViewControllers */,
+				7C9AACD31E0B2C4400D0F01C /* Storyboards & Xibs */,
 				7C2D33371DD10CF800D0D681 /* DataControllers */,
 				7CF3F5F71DD10289001BE320 /* LocalData */,
 				7CA773EF1DCFAC2900402357 /* Assets.xcassets */,
