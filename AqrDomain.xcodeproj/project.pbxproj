@@ -14,6 +14,7 @@
 		7C0D0D111E0B0C2200B0535C /* TSNotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0D0E1E0B0C2200B0535C /* TSNotificationObserver.swift */; };
 		7C0D0D131E0B223200B0535C /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D0D121E0B223200B0535C /* Settings.plist */; };
 		7C2D333D1DD10F8300D0D681 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 7C2D333C1DD10F8300D0D681 /* Cartfile */; };
+		7C516DDA1E0D038B0095AEFC /* LocalData in Resources */ = {isa = PBXBuildFile; fileRef = 7C516DD91E0D038B0095AEFC /* LocalData */; };
 		7C55097E1DD18E980074136B /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C55097D1DD18E980074136B /* DZNEmptyDataSet.framework */; };
 		7C5509821DD193830074136B /* RegisterDomainWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5509801DD193830074136B /* RegisterDomainWebViewController.swift */; };
 		7C5509831DD193830074136B /* RegisterDomainWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C5509811DD193830074136B /* RegisterDomainWebViewController.xib */; };
@@ -28,7 +29,6 @@
 		7CC599431DCFAC8700BEAB6B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC599421DCFAC8700BEAB6B /* APIManager.swift */; };
 		7CC5D71B1DCFC8B30070C882 /* SearchSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5D71A1DCFC8B30070C882 /* SearchSuggestion.swift */; };
 		7CF3F5F61DD101B9001BE320 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3F5F51DD101B9001BE320 /* LocalDataManager.swift */; };
-		7CF3F5F81DD10289001BE320 /* LocalData in Resources */ = {isa = PBXBuildFile; fileRef = 7CF3F5F71DD10289001BE320 /* LocalData */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +39,7 @@
 		7C0D0D0E1E0B0C2200B0535C /* TSNotificationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNotificationObserver.swift; sourceTree = "<group>"; };
 		7C0D0D121E0B223200B0535C /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		7C2D333C1DD10F8300D0D681 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		7C516DD91E0D038B0095AEFC /* LocalData */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocalData; sourceTree = "<group>"; };
 		7C55097D1DD18E980074136B /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
 		7C5509801DD193830074136B /* RegisterDomainWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDomainWebViewController.swift; sourceTree = "<group>"; };
 		7C5509811DD193830074136B /* RegisterDomainWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterDomainWebViewController.xib; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		7CC599421DCFAC8700BEAB6B /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		7CC5D71A1DCFC8B30070C882 /* SearchSuggestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSuggestion.swift; sourceTree = "<group>"; };
 		7CF3F5F51DD101B9001BE320 /* LocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
-		7CF3F5F71DD10289001BE320 /* LocalData */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocalData; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +93,14 @@
 			name = DataControllers;
 			sourceTree = "<group>";
 		};
+		7C516DD81E0D038B0095AEFC /* LocalData */ = {
+			isa = PBXGroup;
+			children = (
+				7C516DD91E0D038B0095AEFC /* LocalData */,
+			);
+			path = LocalData;
+			sourceTree = "<group>";
+		};
 		7C55097F1DD193330074136B /* CustomSearchUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +132,7 @@
 		7CA773DC1DCFAC2900402357 = {
 			isa = PBXGroup;
 			children = (
+				7C516DD81E0D038B0095AEFC /* LocalData */,
 				7C0D0D121E0B223200B0535C /* Settings.plist */,
 				7C55097F1DD193330074136B /* CustomSearchUI */,
 				7C0D0D0B1E0B0C2200B0535C /* TSNotiifcation */,
@@ -149,7 +158,6 @@
 				7C9AACD51E0B2C7600D0F01C /* ViewControllers */,
 				7C9AACD31E0B2C4400D0F01C /* Storyboards & Xibs */,
 				7C2D33371DD10CF800D0D681 /* DataControllers */,
-				7CF3F5F71DD10289001BE320 /* LocalData */,
 				7CA773EF1DCFAC2900402357 /* Assets.xcassets */,
 				7CA773F11DCFAC2900402357 /* LaunchScreen.storyboard */,
 				7CA773F41DCFAC2900402357 /* Info.plist */,
@@ -222,8 +230,8 @@
 				7C2D333D1DD10F8300D0D681 /* Cartfile in Resources */,
 				7CA773F31DCFAC2900402357 /* LaunchScreen.storyboard in Resources */,
 				7CA773F01DCFAC2900402357 /* Assets.xcassets in Resources */,
+				7C516DDA1E0D038B0095AEFC /* LocalData in Resources */,
 				7C0D0D131E0B223200B0535C /* Settings.plist in Resources */,
-				7CF3F5F81DD10289001BE320 /* LocalData in Resources */,
 				7CA773EE1DCFAC2900402357 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

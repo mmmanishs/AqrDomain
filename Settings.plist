@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>UseNetwork</key>
-	<true/>
+	<false/>
 	<key>LocalDataPath</key>
-	<string>/Users/ldq847/MyFolders/Code Source/AqrDomain/AqrDomain/LocalData</string>
+	<string>/Users/ldq847/MyFolders/Code Source/AqrDomain/LocalData/LocalData</string>
 </dict>
 </plist>

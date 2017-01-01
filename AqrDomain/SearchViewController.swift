@@ -215,6 +215,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         APIManager.sharedInstance.searchDomainName(query: currentSearchText,completion: {
             (success, dataReceived) in
             guard let dataReceived = dataReceived else {
+                DispatchQueue.main.async {
+                    self.tblSearchResults.reloadData()
+                    self.activityIndicator.isHidden = true
+                }
                 return
             }
             self.dataArray = dataReceived
